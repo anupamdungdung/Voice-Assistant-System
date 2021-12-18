@@ -1,0 +1,6 @@
+examples
+.pytest_cache
+.idea
+__pycache__/
+Dockerfile
+.DS_Store

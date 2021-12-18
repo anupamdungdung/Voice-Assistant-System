@@ -1,0 +1,52 @@
+{
+  "intents": [
+    {
+      "tag": "stock",
+      "patterns": [
+        "How is nifty doing today?"
+      ]
+    },
+    {
+      "tag": "rental",
+      "patterns": [
+        "How much do you charge?"
+      ]
+    },
+    {
+      "tag": "bytime",
+      "patterns": [
+        "What are your policies?"
+      ]
+    },{
+      "tag": "hours",
+      "patterns": [
+        "At what time do you open?"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Help me"
+      ]
+    },
+    {
+      "tag": "day",
+      "patterns": [
+        "What day is it?"
+      ]
+    },
+    {
+      "tag": "lonely",
+      "patterns": [
+        "I feel lonely"
+      ]
+    },
+    {
+      "tag": "options",
+      "patterns": [
+        "What can I rent here?"
+      ]
+    }
+
+  ]
+}
