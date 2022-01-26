@@ -2,8 +2,10 @@ import nltk
 import numpy as np
 # nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
+import nltk
 #NLP Training Pipeline
 stemmer = PorterStemmer()
+wn=nltk.WordNetLemmatizer()
 
 
 # NLP Preprocessing Pipeline
@@ -14,6 +16,9 @@ def tokenize(sentence):
 
 def stem(word):
     return stemmer.stem(word.lower())
+
+def lemmatize(word):
+    return wn.lemmatize(word.lower())
 
 
 def bag_of_words(tokenized_sentence, all_words):

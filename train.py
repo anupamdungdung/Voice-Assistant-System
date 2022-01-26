@@ -6,21 +6,28 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from torch.utils.tensorboard import SummaryWriter
+from torchinfo import summary
 import matplotlib.pyplot as plt
+import re
 
 writer = SummaryWriter("runs/voiceassistant")
 
-from nltk_utils import bag_of_words, tokenize, stem
+from nltk_utils import bag_of_words, tokenize, stem,lemmatize
 from model import NeuralNet
 
 # Training Pipeline
 # Feed Forward Nueral Network - Linear Layer
-with open('intents.json', 'r') as f:
+with open('intents.json', 'r', encoding='utf-8') as f:
     intents = json.load(f)
+
+with open('qnaFinal.json', 'r', encoding='utf-8') as json_data:
+    qna_intents = json.load(json_data)
+
+
 
 all_words = []
 tags = []
-xy = [] #Number of patterns
+xy = []  # Number of patterns
 
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
@@ -31,15 +38,32 @@ for intent in intents['intents']:
         # tokenize each word in the sentence
         w = tokenize(pattern)
         # add to our words list
+
         all_words.extend(w)
         # add to xy pair
         xy.append((w, tag))
 
+for data in qna_intents:
+    w = tokenize(data)
+    if not any(x.isdigit() for x in w):
+        all_words.extend(w)
+
+# print(extraChar)
 # stem and lower each word
-ignore_words = ['?', '.', '!', "'s", ',']
-all_words = [stem(w) for w in all_words if w not in ignore_words]
+special_char=re.compile('[@_!$%^&*()<>?/|}{~:]\'#')
+
+ignore_words = ['?', '.', '!', "'s", ',', '&', "'", '(', ')', '£1', '\u200b', '’']
+for w in all_words:
+    if bool(re.search(r'\d',w)):
+        all_words.remove(w)
+    if special_char.search(w) is not None:
+        all_words.remove(w)
+
+
+all_words = [lemmatize(w) for w in all_words if w not in ignore_words]
 # remove duplicates and sort
 all_words = sorted(set(all_words))
+print(all_words)
 tags = sorted(set(tags))
 
 # print(len(xy), "patterns")
@@ -68,10 +92,13 @@ num_epochs = 400
 batch_size = 8
 learning_rate = 0.001
 input_size = len(X_train[0])
+print(X_train.shape)
 hidden_size = 8
 output_size = len(tags)
 print(input_size, output_size)
 
+
+# print(input_size)
 
 class ChatDataset(Dataset):
 
@@ -103,7 +130,7 @@ train_loader = DataLoader(dataset=dataset,
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
-
+summary(model, input_size=(batch_size, len(X_train[0]), len(X_train[0])))
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  # Adam optimizer
@@ -138,10 +165,10 @@ for epoch in range(num_epochs):
         # Update Model Weights
         optimizer.step()
 
-        #To plot the graph
-        Loss.append(loss.item()*10)
+        # To plot the graph
+        Loss.append(loss.item() * 10)
         Epoc.append(epoch)
-        accuracy.append(100 - loss.item()*10)
+        accuracy.append(100 - loss.item() * 10)
 
         running_loss += loss.item()
         _, predicted = torch.max(outputs, dim=1)
@@ -171,7 +198,7 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.plot(Epoc, accuracy)
 
-plt.show()
+# plt.show()
 
 # Storing the data from the model as a dictionary
 data = {

@@ -43,7 +43,9 @@ def time():
         timeOfDay = 'am'
     else:
         timeOfDay = 'pm'
-    speak(f'Current time is {hour - 12}{minute}{timeOfDay}')
+    if hour>12:
+        hour=24-hour
+    speak(f'Current time is {hour}{minute}{timeOfDay}')
 
 def current_day():
     day=datetime.datetime.now()

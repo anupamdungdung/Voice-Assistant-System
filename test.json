@@ -7,20 +7,15 @@
       ]
     },
     {
-      "tag": "rental",
+      "tag": "weather",
       "patterns": [
-        "How much do you charge?"
+        "What is the temperature of Cuttack today"
       ]
     },
     {
       "tag": "bytime",
       "patterns": [
         "What are your policies?"
-      ]
-    },{
-      "tag": "hours",
-      "patterns": [
-        "At what time do you open?"
       ]
     },
     {
@@ -42,9 +37,9 @@
       ]
     },
     {
-      "tag": "options",
+      "tag": "well_being",
       "patterns": [
-        "What can I rent here?"
+        "How do you do"
       ]
     }
 

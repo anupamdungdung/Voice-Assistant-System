@@ -87,7 +87,11 @@ def logFind(text):
 
 def perform(text):
     text = text.replace('math', '')
-    text=text.replace('calculate','')
+    if 'calculate' in text:
+        text=text.replace('calculate','')
+    if 'value' in text:
+        text=text.replace('value','')
+
     if "factorial" in text:
         return str(factorial(int(text[text.rfind(' ') + 1:])))
     elif isHaving(text, ['sin', 'cos', 'tan']):

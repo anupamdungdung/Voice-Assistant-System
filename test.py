@@ -2,7 +2,7 @@ import random
 
 import torch
 import json
-from brain_2 import replyFunction
+from brain import replyFunction
 from model import NeuralNet
 from nltk_utils import *
 import torch.nn.functional as F
@@ -31,13 +31,13 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-test_data = ['How is nifty',
-             'How much do you charge?',
-             'What are your policies?',
+test_data = ['What is the temperature of goa today',
+             "Can you tell me today's date",
+             'How is nifty',
              'At what time do you open?',
-             'Help me',
+             'I need help',
              'What day is it?',
-             'I feel lonely']
+             'How do you do']
 
 with open('test.json', 'r') as json_data:
     test_intents = json.load(json_data)
@@ -113,8 +113,14 @@ def testFuntion():
         probs = torch.softmax(output, dim=1)
         prob = probs[0][predicted.item()]
 
-        print(prob.item())
-        print(tag)
+        print("Original Sentence = " + sentence)
+        print("Original Tag = " + tag)
+
+        print(f"Prediction Confidence = {prob.item()}")
+        print("Predicted Tag = " + tag)
+
+        # print(prob.item())
+        # print(tag)
 
         # if prob.item() > 0.75:
         #     for intent in intents['intents']:

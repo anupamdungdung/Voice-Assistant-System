@@ -1,5 +1,5 @@
 from tkinter import *
-from brain_2 import *
+from brain import *
 
 BG_GRAY = "#ABB2B9"
 BG_COLOR = "#17202A"

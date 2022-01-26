@@ -150,6 +150,8 @@ def getWeather(query):
     text = [word for word in list if word not in stopword]
     if 'weather' in text:
         text.remove('weather')
+    if 'current' in text:
+        text.remove('weather')
     if 'temperature' in text:
         text.remove('temperature')
     if 'today' in text:

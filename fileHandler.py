@@ -1,6 +1,6 @@
 import os
 import subprocess
-from brain_2 import speak
+from brain import speak
 
 if not os.path.exists('Files and Document'):
     os.mkdir('Files and Document')

@@ -11,34 +11,33 @@
         "Yo"
       ],
       "responses": [
-        "Hello! What can I do for you?"
+        "Hello! What can I do for you"
       ]
     },
     {
       "tag": "functions",
       "patterns": [
-        "What can you do?",
-        "What are your functionalities?",
-        "What are your functions?"
-
+        "What can you do",
+        "What are your functionalities",
+        "What are your functions"
       ],
       "responses": [
-        "I can do a lot of things. I can search the web, tell you the current date and time, open music for you in youtube and many more"
+        "I can do a lot of things  I can search the web, tell you the current date and time, open music for you in youtube and many more"
       ]
     },
     {
       "tag": "well_being",
       "patterns": [
-        "How are you?",
-        "You okay?"
+        "How are you",
+        "You okay"
       ],
       "responses": [
         "Hey, I'm Good !",
         "I'm good",
-        "I'm good, what about you?",
+        "I'm good, what about you",
         "I'm fine, hope you're also fine",
-        "Good, how about you?",
-        "Doing fine, and you?",
+        "Good, how about you",
+        "Doing fine, and you",
         "I'm doing great",
         "I'm doing Well"
       ]
@@ -70,7 +69,7 @@
         "I am feeling lonely"
       ],
       "responses": [
-        "Don't feel lonely. I'm always with You",
+        "Don't feel lonely  I'm always with You",
         "I can make you feel happy, Just say tell me a joke"
       ]
     },
@@ -86,25 +85,13 @@
       ]
     },
     {
-      "tag": "create_note",
-      "patterns": [
-        "Please create a note",
-        "New note",
-        "Create a note",
-        "I want to create a note"
-      ],
-      "responses": [
-        ""
-      ]
-    },
-    {
       "tag": "time",
       "patterns": [
-        "What is the current time?",
+        "What is the current time",
         "Current time",
         "I want to know the time",
         "Say the time",
-        "What is the time?"
+        "What is the time"
       ],
       "responses": [
         ""
@@ -113,32 +100,8 @@
     {
       "tag": "day",
       "patterns": [
-        "Which day is today?",
-        "Which day of the week is today?"
-      ],
-      "responses": [
-        ""
-      ]
-    },
-    {
-      "tag": "add_todo",
-      "patterns": [
-        "I want to add a note",
-        "Add a new to do",
-        "Add a to do to my list",
-        "new item on my to do list"
-      ],
-      "responses": [
-        ""
-      ]
-    },
-    {
-      "tag": "show_todos",
-      "patterns": [
-        "Show to do",
-        "Show my to do",
-        "What are my to do",
-        "What is on my to do list"
+        "Which day is today",
+        "Which day of the week is today"
       ],
       "responses": [
         ""
@@ -160,11 +123,12 @@
       "tag": "about",
       "patterns": [
         "Who are you",
-        "What do you do?",
-        "Can you tell me about yourself"
+        "What do you do",
+        "Can you tell me about yourself",
+        "What are you?"
       ],
       "responses": [
-        "I am a voice assistant."
+        "I am a voice assistant "
       ]
     },
     {
@@ -173,108 +137,11 @@
         "help",
         "I need your help",
         "Can you help me",
-        "Can you help me with this"
+        "Can you help me with this",
+        "I need help"
       ],
       "responses": [
-        "How can I be of assistance?"
-      ]
-    },
-    {
-      "tag": "hours",
-      "patterns": [
-        "What hours are you open?",
-        "What are your hours?",
-        "When are you open?",
-        "Are you guys open now"
-      ],
-      "responses": [
-        "We're open every day 9am-9pm",
-        "Our hours are 9am-9pm every day"
-      ]
-    },
-    {
-      "tag": "cars",
-      "patterns": [
-        "Which cars do you have?",
-        "What kinds of cars are there?"
-      ],
-      "responses": [
-        "We rent you sedan, jeep and taxi",
-        "We have jeep, sedan and taxi"
-      ]
-    },
-    {
-      "tag": "bikes",
-      "patterns": [
-        "Which bike do you have?",
-        "What kinds of fancy bike are there?"
-      ],
-      "responses": [
-        "We rent you sports bike, touring and cruiser",
-        "We have harley for cruiser and touring, for sports yamaha is available"
-      ]
-    },
-    {
-      "tag": "payments",
-      "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Are you cash only?",
-        "Can I pay in cash"
-      ],
-      "responses": [
-        "We accept VISA, Mastercard and AMEX",
-        "We accept most major credit cards"
-      ]
-    },
-    {
-      "tag": "options",
-      "patterns": [
-        "what do you guys rent?",
-        "What are my options",
-        "What transports can I get here",
-        "What services do you provide?",
-        "What are you services?"
-      ],
-      "responses": [
-        "we rent cars and bikes",
-        "we have huge availability of cars and bikes"
-      ]
-    },
-    {
-      "tag": "rental",
-      "patterns": [
-        "What rental policy is followed here",
-        "how do you guys charge",
-        "How does this work?",
-        "What is your rate?"
-      ],
-      "responses": [
-        "We charge both way by days and by distance",
-        "We have two ways of rental policy, days or distance travelled"
-      ]
-    },
-    {
-      "tag": "bytime",
-      "patterns": [
-        "Time policy seems interesting",
-        "What are your time policy",
-        "I am curious about days policy",
-        "I think, i will save more on days policy"
-      ],
-      "responses": [
-        "We charge Rs 500 per day"
-      ]
-    },
-    {
-      "tag": "bydistance",
-      "patterns": [
-        "I will prefer by distance",
-        "What are your distance policy",
-        "How much you charge distance wise"
-      ],
-      "responses": [
-        "We charge Rs 200 for per 10 kilometer"
+        "How can I be of assistance"
       ]
     },
     {
@@ -282,8 +149,8 @@
       "patterns": [
         "nifty",
         "sensex",
-        "How is nifty doing today?",
-        "How is sensex doing today?",
+        "How is nifty doing today",
+        "How is sensex doing today",
         "hsi",
         "sse",
         "nikkei",
@@ -313,8 +180,13 @@
       "patterns": [
         "How is the weather of",
         "What is the temperature of Bhubaneswar today",
+        "What is the temperature of Cuttack today",
+        "What is the temperature of Delhi today",
+        "What is the temperature of Kolkata today",
+        "What is the temperature of Mumbai today",
         "weather",
-        "temperature"
+        "temperature",
+        "What is the current temperature of Bhubaneswar"
       ],
       "responses": [
         ""
@@ -325,7 +197,7 @@
       "patterns": [
         "What is today's date",
         "Current date",
-        "What is the date today?"
+        "What is the date today"
       ],
       "responses": [
         ""
@@ -345,7 +217,7 @@
     {
       "tag": "birthday",
       "patterns": [
-        "Can you sing Happy Birthday for me?",
+        "Can you sing Happy Birthday for me",
         "Sing Happy Birthday"
       ],
       "responses": [
@@ -357,7 +229,19 @@
       "patterns": [
         "What is the meaning of",
         "Give me the meaning of",
-        "Meaning of"
+        "Meaning of",
+        "What does word mean"
+      ],
+      "responses": [
+        ""
+      ]
+    },
+    {
+      "tag": "question",
+      "patterns": [
+        "I want to ask a question",
+        "Can you give me an answer",
+        "Give me an answer"
       ],
       "responses": [
         ""

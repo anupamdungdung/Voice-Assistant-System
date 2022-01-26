@@ -1,7 +1,6 @@
 from difflib import get_close_matches
 import json
 from random import choice
-import nltk
 import re
 from speech import speak
 from web import stopword
@@ -20,6 +19,7 @@ def dictionary(query):
         # return ["Here's the definition of \"" + word.capitalize() + '"', result]
     elif check == 0:
         speak(f"I think you are looking for {word}. It's definition is {result}")
+        print(result)
         # return ["I think you're looking for \"" + word.capitalize() + '"', "It's definition is,\n" + result]
     else:
         speak(f"{result}")
@@ -34,3 +34,6 @@ def getMeaning(word):
         return word, data[word], 0
     else:
         return word, ["This word doesn't exists in the dictionary."], -1
+
+
+# print(len(data))
